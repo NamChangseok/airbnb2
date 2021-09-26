@@ -10,32 +10,45 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('users', '0006_user_superhost_alter_user_currency'),
+        ("users", "0006_user_superhost_alter_user_currency"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Room',
+            name="Room",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('created', models.DateTimeField()),
-                ('updated', models.DateTimeField()),
-                ('name', models.CharField(max_length=140)),
-                ('description', models.TextField()),
-                ('country', django_countries.fields.CountryField(max_length=2)),
-                ('city', models.CharField(max_length=80)),
-                ('price', models.IntegerField()),
-                ('guests', models.IntegerField()),
-                ('address', models.CharField(max_length=180)),
-                ('bedrooms', models.IntegerField()),
-                ('bath', models.IntegerField()),
-                ('check_in', models.TimeField()),
-                ('check_out', models.TimeField()),
-                ('instant_book', models.BooleanField(default=False)),
-                ('host', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='users.user')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("created", models.DateTimeField()),
+                ("updated", models.DateTimeField()),
+                ("name", models.CharField(max_length=140)),
+                ("description", models.TextField()),
+                ("country", django_countries.fields.CountryField(max_length=2)),
+                ("city", models.CharField(max_length=80)),
+                ("price", models.IntegerField()),
+                ("guests", models.IntegerField()),
+                ("address", models.CharField(max_length=180)),
+                ("bedrooms", models.IntegerField()),
+                ("baths", models.IntegerField()),
+                ("check_in", models.TimeField()),
+                ("check_out", models.TimeField()),
+                ("instant_book", models.BooleanField(default=False)),
+                (
+                    "host",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE, to="users.user"
+                    ),
+                ),
             ],
             options={
-                'abstract': False,
+                "abstract": False,
             },
         ),
     ]
