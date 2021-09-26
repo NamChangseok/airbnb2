@@ -40,6 +40,9 @@ Django_APPs = [
 PROJECT_APPS = [
     "users.apps.UsersConfig",
     "rooms.apps.RoomsConfig",
+    "reviews.apps.ReviewsConfig",
+    "reservations.apps.ReservationsConfig",
+    "lists.apps.ListsConfig",
 ]
 
 THIRD_PARTY_APPS = ["django_countries"]
@@ -115,7 +118,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = "en-us"
 
-TIME_ZONE = "UTC"
+TIME_ZONE = "Asia/Seoul"
 
 USE_I18N = True
 
